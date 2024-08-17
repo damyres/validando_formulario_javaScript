@@ -10,5 +10,4 @@ function verficaCampo(campo) {
     if (campo.name == "cpf" && campo.value.length >= 11) {
         ehUmCpf(campo)
     }
-
 }
