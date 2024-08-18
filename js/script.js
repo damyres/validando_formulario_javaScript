@@ -6,6 +6,8 @@ const camposDoFormulario = document.querySelectorAll("[required")
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verficaCampo(campo))
+    campo.addEventListener("invalid", evento => evento.preventDefault())
+
 })
 
 function verficaCampo(campo) {
@@ -13,6 +15,7 @@ function verficaCampo(campo) {
         ehUmCpf(campo)
     }
     if(campo.name == "aniversario" && campo.value != ehMaiorDeIdade(campo)){
-        
+
     }
+    console.log(campo.validity)
 }
