@@ -51,6 +51,8 @@ const mensagens = {
 
 function verficaCampo(campo) {
     let mensagem = "";
+    campo.setCustomValidity('')
+ 
     if (campo.name == "cpf" && campo.value.length >= 11) {
         ehUmCpf(campo)
     }
