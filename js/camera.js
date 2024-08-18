@@ -26,6 +26,7 @@ botaoTirarFoto.addEventListener("click", function() {
     campoCamera.style.display = "none";
 
     menssagem.style.display = "block";
+    //campo.style.border = "2px solid red"
 })
 
 botaoEnviarFoto.addEventListener("click", () => {
