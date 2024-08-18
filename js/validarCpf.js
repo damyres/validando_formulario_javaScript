@@ -57,3 +57,4 @@ function validaSegundoDigito(cpf) {
     }
 
 }
+console.log(cpf)
