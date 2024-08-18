@@ -1,13 +1,27 @@
 const botaoIniciarCamera = document.querySelector("[data-video-botao]")
 const campoCamera = document.querySelector("[data-camera]")
 const video = document.querySelector("[data-video]")
+const botaoTirarFoto = document.querySelector("[data-tirar-foto]")
+const canvas = document.querySelector("[data-video-canvas]")
+const menssagem = document.querySelector("[data-messagem]")
 
+let imagemURL = "";
 botaoIniciarCamera.addEventListener("click", async function () {
-    const inciarVideo = await navigator.mediaDevices.getUserMedia({video: true, audio: false })
+    const inciarVideo = await navigator.mediaDevices.getUserMedia({ video: true, audio: false })
 
     botaoIniciarCamera.style.display = "none";
 
     campoCamera.style.display = "block";
 
     video.srcObject = inciarVideo;
+})
+
+botaoTirarFoto.addEventListener("click", function () {
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
+
+    imagemURL = canvas.toDataURL("image/jpeg");
+
+    campoCamera.style.display = "none";
+
+    menssagem.style.display = "block";
 })
